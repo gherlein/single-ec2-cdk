@@ -1,0 +1,12 @@
+{
+    "stackName": "SingleEc2Stack-dev",
+    "ec2Name": "dev",
+    "nickName": "dev",
+    "ec2Class": "t3",
+    "ec2Size": "micro",
+    "keyName": "<set yourself>",
+    "keyFile": "<set yourself>",
+    "userDataFile": "<point to any file that you want to append to the userdata script",
+    "cdkOut": "cdk-outputs.json",
+    "awsConfig": "~/.aws by default"
+}

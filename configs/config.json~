@@ -1,0 +1,12 @@
+{
+    "stackName": "SingleEc2Stack-dev",
+    "ec2Name": "dev",
+    "nickName": "dev",
+    "ec2Class": "t3",
+    "ec2Size": "micro",
+    "keyName": "gch.cer",
+    "keyFile": "~/keys/gch.cer",
+    "userDataFile": "~/gch/userdata-gherlein",
+    "cdkOut": "cdk-outputs.json",
+    "awsConfig": "~/.aws"
+}

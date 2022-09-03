@@ -1,0 +1,39 @@
+{
+  "name": "single-ec2",
+  "version": "0.1.0",
+  "bin": {
+    "single-ec2": "bin/single-ec2.js"
+  },
+  "scripts": {
+    "build": "yarn install && tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "clean": "scripts/clean",
+    "deploy": "yarn build && STACKNAME=`jq -r .stackName configs/config.json` cdk deploy --outputs-file ./cdk-outputs.json --require-approval never && scripts/setssh",
+    "prep": "yarn creds && yarn copykeys",
+    "destroy": "yarn build && STACKNAME=`jq -r .stackName configs/config.json` cdk destroy --force",
+    "setssh": "scripts/setssh",
+    "ssh": "scripts/ssh",
+    "stop": "scripts/ec2 stop",
+    "start": "scripts/ec2 start",
+    "status": "scripts/ec2 status",
+    "creds": "scripts/creds",
+    "copykeys": "scripts/copykeys"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.10",
+    "@types/node": "^10.17.27",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "aws-cdk": "^2.21.0",
+    "aws-cdk-lib": "^2.40.0",
+    "aws-sdk": "^2.1209.0",
+    "constructs": "^10.1.94",
+    "ts-node-dev": "^2.0.0"
+  }
+}
